@@ -4,4 +4,9 @@ def precioxtamaño(tamaño):
     return historial[tamaño]
 
 def precioxingrediente(ingrediente):
-    historial = {}
+    historial = {'ja':1,'ch':1,'pi':1,'dq':1,'ac':1,'pp':1}
+    return historial[ingrediente]
+
+def precioxbebida(bebida):
+    historial = {'1':4,'2':3,'3':1.5,'4':1}
+    return historial[bebida]
