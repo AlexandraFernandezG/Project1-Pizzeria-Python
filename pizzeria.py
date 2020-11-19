@@ -18,11 +18,16 @@ def inicio():
         
         #Solicitud de tamaño
         print('Por favor, seleccione el tamaño de su pizza\n')
+        
         tamaño = accion.solicitar_tamaño()
         precio = precio + historial.precioxtamaño(tamaño)
 
         #Solicitud de ingredientes
-        #***************
+
+        ingredientes = []
+        ingredientes= accion.solicitar_ingrediente()
+        precio = precio + accion.calcular_precio_ingrediente(ingredientes)
+        
 
         #Solicitud de bebidas
         res = input('\n¿Desea agregar una bebida a su orden? [s/n]: \n')
@@ -37,7 +42,7 @@ def inicio():
         #*****************
 
         #Resumen del pedido
-        print('Subtotal a pagar por una pizza '+accion.consultar_nombre_tamaño(tamaño)+' con'+' INGREDIENTES '+'y '+accion.consultar_nombre_bebidas(bebidas)+': '+str(precio)+'$')
+        print('Subtotal a pagar por una pizza '+accion.consultar_nombre_tamaño(tamaño)+ ' '+'con' +' '+ accion.consultar_nombre_ingredientes(ingredientes) +' '+'y'+' '+accion.consultar_nombre_bebidas(bebidas)+': '+str(precio)+'$')
         total = total+precio
         precio=0 
 
