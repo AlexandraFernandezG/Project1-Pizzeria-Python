@@ -16,13 +16,13 @@ def consultar_bebidas():
 def solicitar_tamaño():
     print('Opciones:')
     tamaño = input('Tamaños: Familiar ( f ) Grande ( g ) Mediana ( m ) Personal ( p ): ')
-    while tamaño not in'fgmp':
+    while tamaño not in 'fgmp':
         print('¡Debe seleccionar un tamaño valido!\n')
         tamaño = input('Tamaños: Familiar ( f ) Grande ( g ) Mediana ( m ) Personal ( p ): ')
     return tamaño
 
 def solicitar_confirmacion():
-    salida = input('¿Desea continuar [s/n]?: ')
+    salida = input('¿Desea continuar [s/n]?: \n')
     while salida not in 'snSN':
         print('Opcion no valida.\n')
         salida = input('¿Desea continuar [s/n]?: \n')
