@@ -64,7 +64,6 @@ def inicio():
 inicio()
 
 
-
 #if (__name__ == "__main__"):
 #   import sys
 #   inicio()

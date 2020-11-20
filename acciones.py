@@ -32,14 +32,14 @@ def consultar_nombre_ingrediente(ingrediente):
 def solicitar_tamaño():
     print('Opciones:')
     tamaño = input('Tamaños: Familiar ( f ) Grande ( g ) Mediana ( m ) Personal ( p ): ')
-    while tamaño not in 'fgmp':
+    while tamaño not in 'fgmp' or tamaño == '':
         print('¡Debe seleccionar un tamaño valido!\n')
         tamaño = input('Tamaños: Familiar ( f ) Grande ( g ) Mediana ( m ) Personal ( p ): ')
     return tamaño
 
 def solicitar_confirmacion():
     salida = input('¿Desea continuar [s/n]?: \n')
-    while salida not in 'snSN':
+    while salida not in 'snSN' or salida == '':
         print('Opcion no valida.\n')
         salida = input('¿Desea continuar [s/n]?: \n')
     return salida
