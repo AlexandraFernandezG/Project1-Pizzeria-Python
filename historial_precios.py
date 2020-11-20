@@ -10,3 +10,7 @@ def precioxingrediente(ingrediente):
 def precioxbebida(bebida):
     historial = {'1':80,'2':100,'3':150,'4':180}
     return historial[bebida]
+
+def precioDelivery(delivery):
+    historial = {'mon': 20, 'paz': 30, 'par': 40, 'ant': 25}
+    return historial[delivery]

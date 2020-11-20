@@ -9,12 +9,20 @@ def consultar_nombre_bebida(bebida):
     tamaño_dict = {'1':'Refresco 2 litros', '2':'Refresco litro y medio', '3':'Refresco lata', '4':'Agua Mineral' }
     return tamaño_dict[bebida]
 
+def consultar_nombre_delivery(delivery):
+    tamaño_dict = {'mon': 'Montalban', 'paz': 'La Paz', 'par': 'El Paraiso', 'ant': 'Antimano'}
+    return tamaño_dict[delivery]
+
 def consultar_bebidas():
     tamaño_dict = {'1':'Refresco 2 litros', '2':'Refresco litro y medio', '3':'Refresco lata', '4':'Agua Mineral' }
     return tamaño_dict
 
 def consultar_ingredientes():
     tamaño_dict = {'ja':'Jamón','ch':'Champiñones','pi':'Pimentón','dq':'Doble Queso','ac':'Aceitunas','pp':'Pepperoni','sa':'Salchichón', }
+    return tamaño_dict
+
+def consultar_delivery():
+    tamaño_dict = {'mon': 'Montalban', 'paz': 'La Paz', 'par': 'El Paraiso', 'ant': 'Antimano'}
     return tamaño_dict
 
 def consultar_nombre_ingrediente(ingrediente):
@@ -68,6 +76,13 @@ def solicitar_ingrediente ():
     
     return ingredientes
 
+def solicitar_delivery ():
+    lugar = input('Entrega a: Montalban ( mon ) La Paz ( paz ) El Paraiso ( par ) Antimano ( ant ): ')
+    while lugar not in['mon', 'paz', 'par', 'ant']:
+        print('¡Debe seleccionar un lugar valido!\n')
+        lugar = input('Tamaños: Montalban ( mon ) La Paz ( paz ) El Paraiso ( par ) Antimano ( ant ): ')
+    return lugar
+
 
 
 def consultar_nombre_bebidas(bebidas):   #En proceso
@@ -118,5 +133,4 @@ def calcular_precio_ingrediente(ingredientes):
     for i in ingredientes:
         suma = suma + hp.precioxingrediente(i)
     return suma
-
 
