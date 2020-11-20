@@ -72,7 +72,7 @@ def solicitar_ingrediente ():
         if ingrediente in historial_ingredientes:
             ingredientes.append (ingrediente)
         else:
-             print('¡Debe seleccionar un codigo de bebida valido!\n')
+             print('¡Debe seleccionar un codigo de ingrediente valido!\n')
     
     return ingredientes
 
@@ -85,41 +85,51 @@ def solicitar_delivery ():
 
 
 
-def consultar_nombre_bebidas(bebidas):   #En proceso
+def consultar_nombre_bebidas(bebidas):   
     nombre =''
-    n=len(bebidas)
+    n=int(len(bebidas))
     if(n==0):
         nombre='sin bebida'
+    elif(n==1):
+        nombre= nombre + consultar_nombre_bebida(bebidas[0]) 
     else:
-        if(n!=1):
-            for i in bebidas:
+        for i in bebidas:
+            if(n>1):
                 if(i not in nombre):
-                    nombre= nombre + consultar_nombre_bebida(i) +','
+                    if(n-1==1):
+                        nombre= nombre + consultar_nombre_bebida(i)
+                    else: 
+                        nombre= nombre + consultar_nombre_bebida(i) +', '
                     n=n-1
+                    print(1)
                 else:
                     n=n-1
-        else:
-             for i in bebidas:
-                nombre= nombre + consultar_nombre_bebida(i) 
+            else:
+                nombre= nombre+ ' y ' + consultar_nombre_bebida(i)
     return nombre
 
 
-def consultar_nombre_ingredientes(ingredientes):   #En proceso
+def consultar_nombre_ingredientes(ingredientes): 
     nombre =''
-    n=len(ingredientes)
+    n=int(len(ingredientes))
     if(n==0):
-        nombre='sin ingrediente adicional'
+        nombre='0 ingredientes adicionales'
+    elif(n==1):
+        nombre= nombre + consultar_nombre_ingrediente(ingredientes[0]) 
     else:
-        if(n!=1):
-            for i in ingredientes:
+        for i in ingredientes:
+            if(n>1):
                 if(i not in nombre):
-                    nombre= nombre + consultar_nombre_ingrediente(i) +','
+                    if(n-1==1):
+                        nombre= nombre + consultar_nombre_ingrediente(i)
+                    else: 
+                        nombre= nombre + consultar_nombre_ingrediente(i) +', '
                     n=n-1
+                    print(1)
                 else:
                     n=n-1
-        else:
-             for i in ingredientes:
-                nombre= nombre + consultar_nombre_ingrediente(i) 
+            else:
+                nombre= nombre+ ' y ' + consultar_nombre_ingrediente(i) + ','
     return nombre
 
 def calcular_precio_bebida(bebidas):

@@ -39,7 +39,6 @@ def inicio():
         
         
         #Delivery
-        #*****************
         respuestaDelivery = input('\n¿Desea hacer delivery de su orden? [s/n]: \n').lower()
 
         if (respuestaDelivery == 's'):

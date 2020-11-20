@@ -1,6 +1,6 @@
 
 def precioxtamaño(tamaño):
-    historial = {'p':280, 'm':430, 'g':580 }
+    historial = {'f':630,'p':280, 'm':430, 'g':580 }
     return historial[tamaño]
 
 def precioxingrediente(ingrediente):
