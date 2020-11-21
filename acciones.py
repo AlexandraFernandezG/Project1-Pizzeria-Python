@@ -29,6 +29,15 @@ def consultar_nombre_ingrediente(ingrediente):
     tamaño_dict = {'ja':'Jamón','ch':'Champiñones','pi':'Pimentón','dq':'Doble Queso','ac':'Aceitunas','pp':'Pepperoni','sa':'Salchichón', }
     return tamaño_dict [ingrediente]
 
+def consultar_puntuacion ():
+    tamaño_dict = {'1':'*', '2':'**', '3':'***'}
+    return tamaño_dict
+
+def consultar_respuesta ():
+    tamaño_dict = {'1':'Lamentamos mucho el mal servicio ofecido, para la próxima esperamos hacerlo mejor','2':'Entendemos, es bueno saber que se puede mejorar',
+                  '3':'Qué bueno, siempre tratamos de mantener la mejor calidad y servicio'}
+    return tamaño_dict
+
 def solicitar_tamaño():
     print('Opciones:')
     tamaño = input('Tamaños: Familiar ( f ) Grande ( g ) Mediana ( m ) Personal ( p ): ')
@@ -83,7 +92,21 @@ def solicitar_delivery ():
         lugar = input('Tamaños: Montalban ( mon ) La Paz ( paz ) El Paraiso ( par ) Antimano ( ant ): ')
     return lugar
 
-
+def respuesta_puntuacion ():
+    historial_puntuacion = consultar_puntuacion()
+    respuesta = consultar_respuesta ()
+    for codigo,nombre in historial_puntuacion.items():
+        print(nombre, '  ', f'({codigo})')
+    while True:
+        puntuacion = input('\nIndique la puntuacion:\n')
+        if puntuacion in historial_puntuacion:
+         res = respuesta[puntuacion]
+         print ('Gracias por su respuesta')
+         print(res)
+         print('\n*************************FIN**************************************\n')
+         break
+        else:
+         print('¡Debe seleccionar un codigo de puntuacion valido!\n')
 
 def consultar_nombre_bebidas(bebidas):   
     nombre =''
