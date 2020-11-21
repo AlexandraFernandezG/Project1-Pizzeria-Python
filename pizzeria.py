@@ -39,21 +39,29 @@ def inicio():
         
         
         #Delivery
-        #*****************
+        respuestaDelivery = input('\n¿Desea hacer delivery de su orden? [s/n]: \n').lower()
 
-        #Resumen del pedido
-        print('Subtotal a pagar por una pizza '+accion.consultar_nombre_tamaño(tamaño)+ ' '+'con' +' '+ accion.consultar_nombre_ingredientes(ingredientes) +' '+'y'+' '+accion.consultar_nombre_bebidas(bebidas)+': '+str(precio)+'$')
-        total = total+precio
-        precio=0 
+        if (respuestaDelivery == 's'):
+
+            lugar = accion.solicitar_delivery()
+            precio += historial.precioDelivery(lugar)
+            #Resumen del pedido
+            print('Subtotal a pagar por una pizza '+accion.consultar_nombre_tamaño(tamaño)+ ' con '+ accion.consultar_nombre_ingredientes(ingredientes) +' y '+accion.consultar_nombre_bebidas(bebidas)+ ' a '+ accion.consultar_nombre_delivery(lugar) +': '+str(precio))
+            total = total+precio
+            precio=0 
+        else:
+            #Resumen del pedido
+            print('Subtotal a pagar por una pizza '+accion.consultar_nombre_tamaño(tamaño)+ ' con '+ accion.consultar_nombre_ingredientes(ingredientes) +' y '+accion.consultar_nombre_bebidas(bebidas)+': '+str(precio))
+            total = total+precio
+            precio=0 
 
         salida = accion.solicitar_confirmacion()
 
     #Resumen de la compra completa
-    print(f'El pedido tiene un total de {n} pizza(s) por un monto de {total}$\n')
+    print(f'El pedido tiene un total de {n} pizza(s) por un monto de {total}\n')
     print('¡Gracias por su compra, regrese pronto!\n')
         
 inicio()
-
 
 
 #if (__name__ == "__main__"):
