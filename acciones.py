@@ -124,7 +124,6 @@ def consultar_nombre_bebidas(bebidas):
                     else: 
                         nombre= nombre + consultar_nombre_bebida(i) +', '
                     n=n-1
-                    print(1)
                 else:
                     n=n-1
             else:
@@ -148,7 +147,6 @@ def consultar_nombre_ingredientes(ingredientes):
                     else: 
                         nombre= nombre + consultar_nombre_ingrediente(i) +', '
                     n=n-1
-                    print(1)
                 else:
                     n=n-1
             else:
