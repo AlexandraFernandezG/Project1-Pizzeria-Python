@@ -67,7 +67,7 @@ def inicio():
         res = input('Le gustaria responder una pregunta de satisfacción con el fin de mejorar nuestra atención y servicios?[s/n]: \n')
         if (res == 's'):
             print('\n¿Cómo evaluaría nuestro servicios en escala del 1 al 3? (siendo el 3 como excelente):')
-            puntuacion = accion.respuesta_puntuacion()
+            accion.respuesta_puntuacion()
         else:
             print('Que tenga un buen día')
             print('***************************************************************************************')

@@ -34,7 +34,7 @@ def consultar_puntuacion ():
     return tamaño_dict
 
 def consultar_respuesta ():
-    tamaño_dict = {'1':'Lamentamos mucho el mal servicio ofecido, para la próxima esperamos hacerlo mejor','2':'Entendemos, es bueno saber que se puede mejorar',
+    tamaño_dict = {'1':'Lamentamos mucho el mal servicio ofrecido, para la próxima esperamos hacerlo mejor','2':'Entendemos, es bueno saber que se puede mejorar',
                   '3':'Qué bueno, siempre tratamos de mantener la mejor calidad y servicio'}
     return tamaño_dict
 
@@ -69,7 +69,7 @@ def solicitar_bebida():
     return bebidas
 
 def solicitar_ingrediente ():
-    salida,ingredientes ='s',[]
+    ingredientes = []
     print('Ingredientes:')
     historial_ingredientes = consultar_ingredientes()
     for codigo,nombre in historial_ingredientes.items():
