@@ -1,4 +1,4 @@
-# Proyecto-1-Pizzeria
+# Proyecto-1-Pizzeria :pizza:
 
 # Integrantes: 
   - Escalante, Omar
